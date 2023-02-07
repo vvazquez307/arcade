@@ -1,6 +1,8 @@
 // variables
-const board = document.querySelector("#board")
-const cell = document.querySelector(".input_box")
+const board = document.getElementById("board")
+const player1 = "x"
+const player2 = "o"
+let turn_display = document.querySelector("#player_turn_display")
 const gameState = {
     players: ['x', 'o'],
     board: [
@@ -9,14 +11,18 @@ const gameState = {
       [null, null, null]
     ]
   }
-console.log(cell)
-//   listeners
-board.addEventListener('click', clickedCell)
 
-//   functions
-function clickedCell(event){
-    console.log(event.target)
-    console.log("click")
+function render(){
+    for(let i = 0; i < 9; i++){
+        let cell = document.createElement("div")
+        board.appendChild(cell)
+        cell.className =  "square"
+    }
 }
+render()
 
+board.addEventListener('click', playerClickedSquare)
 
+function playerClickedSquare(event){
+event.target.innerText = player1
+}
