@@ -1,6 +1,11 @@
 html{
     background-color: lightgreen;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #content_container{
     padding: 25px;
@@ -9,6 +14,7 @@ html{
     align-items: center;
 }
 #player_turn_container{
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     width: 200px;
@@ -18,6 +24,7 @@ html{
     padding-right: 0.5rem;
 }
 #board{
+    border: 1px solid red;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -29,4 +36,8 @@ html{
     border: 1px solid black;
     width: 330px;
     height: 330px;
+}
+input{
+    text-align: center;
+    width: 100px;
 }

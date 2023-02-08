@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <script defer src="index.js"></script>
     <title>index</title>
-</head>
-<body>
-    <div id = "content_container">
-        <h1>Tic-Tac-Toe</h1>
-    <div id = "player_turn_container">
+  </head>
+  <body>
+    <div id="content_container">
+      <h1>Tic-Tac-Toe</h1>
+      <form>
+        <input id="player1" type="text" placeholder="enter player 1" />
+        <button id="player1Input-button" class="nameButton">
+          Enter Player 1 Name
+        </button>
+      </form>
+      <input id="player2" type="text" placeholder="enter player 2" />
+      <button class="nameButton">Enter Player 2 Name</button>
+      <h3 id="player1Display">player 1 is:</h3>
+      <h3 id="player2Display">player 2 is:</h3>
+      <div id="player_turn_container">
         <h1>player</h1>
-        <h1 id = "player_turn_display">1</h1>
+        <h1 id="player_turn_display">1</h1>
         <h1>turn</h1>
+      </div>
     </div>
-    </div>   
-        <section id="board"></section>
-    </div>
-</body>
+    <section id="board"></section>
+  </body>
 </html>
