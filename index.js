@@ -1,10 +1,10 @@
 let state = {
-  players: [" ", " "],
-  currentPlayer: " ",
+  players: ["", ""],
+  currentPlayer: ""
 }
 // variables
 const board = document.getElementById("board")
-let turn_display = document.querySelector("#player_turn_display")
+let turnDisplay = document.querySelector("#player_turn_display")
 
 // name inputs and buttons
 let inputName1 = document.querySelector("#player1")
@@ -36,3 +36,22 @@ nameButton[1].addEventListener("click", (event)=>{
   let player2Display = document.getElementById("player2Display")
   player2Display.innerText = `player 2 is: ${input}`
 })
+
+
+board.addEventListener("click", (event)=>{
+  console.log("click")
+  if(state.currentPlayer === state.players[0]){
+    state.currentPlayer = state.players[1]
+    console.log("current player is: "+ state.currentPlayer)
+    changeTurnDisplay()
+
+  }else {
+    state.currentPlayer = state.players[0]
+    console.log("current player is: "+ state.currentPlayer)
+    changeTurnDisplay()
+  }
+  })
+
+  function changeTurnDisplay(){
+    turnDisplay.innerText = state.currentPlayer
+  }
