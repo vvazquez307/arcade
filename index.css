@@ -14,7 +14,6 @@ body{
     align-items: center;
 }
 #player_turn_container{
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     width: 200px;
@@ -24,7 +23,6 @@ body{
     padding-right: 0.5rem;
 }
 #board{
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -33,6 +31,9 @@ body{
 }
 
 .square{
+    display: flex;
+    justify-content: center;
+    font-size: 250px;
     border: 1px solid black;
     width: 330px;
     height: 330px;

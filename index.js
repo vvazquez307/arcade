@@ -39,16 +39,20 @@ nameButton[1].addEventListener("click", (event)=>{
 
 
 board.addEventListener("click", (event)=>{
-  console.log("click")
   if(state.currentPlayer === state.players[0]){
     state.currentPlayer = state.players[1]
-    console.log("current player is: "+ state.currentPlayer)
     changeTurnDisplay()
+    console.log(event.target.innerText)
+    event.target.innerText = "x"
+    console.log(event.target.innerText)
 
   }else {
     state.currentPlayer = state.players[0]
-    console.log("current player is: "+ state.currentPlayer)
     changeTurnDisplay()
+    console.log(event.target.innerText)
+    event.target.innerText = "o"
+    console.log(event.target.innerText)
+
   }
   })
 
