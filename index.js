@@ -27,28 +27,12 @@ nameButton[0].addEventListener("click", (event)=>{
   state.players[0] = input
   let player1Display = document.getElementById("player1Display")
   player1Display.innerText = `player 1 is: ${input}`
-  
 })
-// nameButton[1].addEventListener("click", (event)=>{
-//   const player1 = event.target.innerText.includes("1")
-//   console.log(player1)
-//   state.players[1] = inputName1.value
-//   console.log(state.currentPlayer)
-// })
 
-// for(let i = 0;i <nameButton.length; i++){
-//   nameButton[i].addEventListener("click", (event)=>{
-//     const player1 = event.target.innerText.includes("1")
-//     console.log(player1)
-//     state.currentPlayer = inputName1.value
-//     console.log(state.currentPlayer)
-//   })
-// }
-
-// listeners for the name input buttons
-
-// input1Button.addEventListener("click", input1ButtonClicked)
-
-// function input1ButtonClicked(event){
-// console.log(event.innerHtml)
-// }
+nameButton[1].addEventListener("click", (event)=>{
+  event.preventDefault()
+  let input = document.getElementById("player2").value
+  state.players[1] = input
+  let player2Display = document.getElementById("player2Display")
+  player2Display.innerText = `player 2 is: ${input}`
+})
