@@ -27,6 +27,8 @@ nameButton[0].addEventListener("click", (event)=>{
   state.players[0] = input
   let player1Display = document.getElementById("player1Display")
   player1Display.innerText = `player 1 is: ${input}`
+  state.currentPlayer = input
+  changeTurnDisplay()
 })
 
 nameButton[1].addEventListener("click", (event)=>{
@@ -40,21 +42,26 @@ nameButton[1].addEventListener("click", (event)=>{
 
 board.addEventListener("click", (event)=>{
   if(state.currentPlayer === state.players[0]){
-    state.currentPlayer = state.players[1]
-    changeTurnDisplay()
-    console.log(event.target.innerText)
-    event.target.innerText = "x"
-    console.log(event.target.innerText)
-
-  }else {
-    state.currentPlayer = state.players[0]
-    changeTurnDisplay()
-    console.log(event.target.innerText)
-    event.target.innerText = "o"
-    console.log(event.target.innerText)
-
+    if(event.target.innerText === ""){
+      console.log(event.target)
+      console.log(event.target.innerText)
+      event.target.innerText = "x"
+      console.log(event.target.innerText)
+      state.currentPlayer = state.players[1]
+      changeTurnDisplay()
+    }else{
+      return
+    }
+  }else if(state.currentPlayer === state.players[1]) {
+    if(event.target.innerText === ""){
+      event.target.innerText = "o"
+      state.currentPlayer = state.players[0]
+      changeTurnDisplay()
+    }else{
+      return
+    }
   }
-  })
+})
 
   function changeTurnDisplay(){
     turnDisplay.innerText = state.currentPlayer
