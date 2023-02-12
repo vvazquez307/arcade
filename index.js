@@ -2,7 +2,8 @@ let state = {
   players: ["", ""],
   currentPlayer: ""
 }
-
+let drawCounterVar = 0
+let resultDisplay = document.querySelector("#player_turn_container > h1:nth-child(3)")
 // variables
 const board = document.getElementById("board")
 let turnDisplay = document.querySelector("#player_turn_display")
@@ -57,6 +58,7 @@ board.addEventListener("click", (event)=>{
       state.currentPlayer = state.players[1]
       changeTurnDisplay()
       checkWinner()
+      checkDraw()
     }else{
       return
     }
@@ -66,6 +68,7 @@ board.addEventListener("click", (event)=>{
       state.currentPlayer = state.players[0]
       changeTurnDisplay()
       checkWinner()
+      checkDraw()
     }else{
       return
     }
@@ -79,68 +82,132 @@ function changeTurnDisplay(){
   function checkWinner(){
     if(square1.innerText === "x" && square2.innerText === "x" && square3.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square4.innerText === "x" && square5.innerText === "x" && square6.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square7.innerText === "x" && square8.innerText === "x" && square9.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square1.innerText === "x" && square4.innerText === "x" && square7.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square2.innerText === "x" && square5.innerText === "x" && square8.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square3.innerText === "x" && square6.innerText === "x" && square9.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square1.innerText === "x" && square5.innerText === "x" && square9.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square3.innerText === "x" && square5.innerText === "x" && square7.innerText === "x"){
       console.log("player x wins")
-      // reset function
+      turnDisplay.innerText = state.players[0]
+      displayWin()
+      reset()
     }
     if(square1.innerText === "o" && square2.innerText === "o" && square3.innerText === "o"){
-      console.log("player x wins")
-      // reset function
+      console.log("player o wins")
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square4.innerText === "o" && square5.innerText === "o" && square6.innerText === "o"){
       console.log("player o wins")
-      // reset function
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square7.innerText === "o" && square8.innerText === "o" && square9.innerText === "o"){
       console.log("player o wins")
-      // reset function
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square1.innerText === "o" && square4.innerText === "o" && square7.innerText === "o"){
       console.log("player o wins")
-      // reset function
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square2.innerText === "o" && square5.innerText === "o" && square8.innerText === "o"){
       console.log("player o wins")
-      // reset function
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square3.innerText === "o" && square6.innerText === "o" && square9.innerText === "o"){
       console.log("player o wins")
-      // reset function
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square1.innerText === "o" && square5.innerText === "o" && square9.innerText === "o"){
       console.log("player o wins")
-      // reset function
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
     }
     if(square3.innerText === "o" && square5.innerText === "o" && square7.innerText === "o"){
       console.log("player o wins")
-      // reset function
-    }else if(true){
+      turnDisplay.innerText = state.players[1]
+      displayWin()
+      reset()
+    }
+  }
+
+function checkDraw(){
+    drawCounterVar++
+    if(drawCounterVar === 9){
+      reset()
       console.log("draw")
     }
   }
+
+function reset(){
+  setTimeout(() => {
+    square1.innerText = ""
+    square2.innerText = ""
+    square3.innerText = ""
+    square4.innerText = ""
+    square5.innerText = ""
+    square6.innerText = ""
+    square7.innerText = ""
+    square8.innerText = ""
+    square9.innerText = ""
+    resultDisplay.innerText = "turn"
+    state.currentPlayer = state.players[0]
+    turnDisplay.innerText = state.players[0]
+    drawCounterVar = 0
+  }, 3000);
+}
+
+function displayWin(){
+  resultDisplay.innerText = "wins"
+}
+
+function displayDraw(){
+  resultDisplay.innerText = "draw"
+}
