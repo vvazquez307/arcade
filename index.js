@@ -10,6 +10,16 @@ let inputName1 = document.querySelector("#player1")
 let inputName2 = document.querySelector("player2")
 let nameButton = document.getElementsByTagName("button")
 
+// this will make the board/3x3 grid
+function renderBoard(){
+    for(let i = 0; i < 9; i++){
+        let cell = document.createElement("div")
+        cell.className = "square"
+        board.appendChild(cell)
+    }
+}
+renderBoard()
+
 let square1 = document.querySelector("#board > div:nth-child(1)")
 let square2 = document.querySelector("#board > div:nth-child(2)")
 let square3 = document.querySelector("#board > div:nth-child(3)")
@@ -20,15 +30,6 @@ let square7 = document.querySelector("#board > div:nth-child(7)")
 let square8 = document.querySelector("#board > div:nth-child(8)")
 let square9 = document.querySelector("#board > div:nth-child(9)")
 
-// this will make the board/3x3 grid
-function renderBoard(){
-    for(let i = 0; i < 9; i++){
-        let cell = document.createElement("div")
-        cell.className = "square"
-        board.appendChild(cell)
-    }
-}
-renderBoard()
 
 nameButton[0].addEventListener("click", (event)=>{
   event.preventDefault()
@@ -139,5 +140,7 @@ function changeTurnDisplay(){
     if(square3.innerText === "o" && square5.innerText === "o" && square7.innerText === "o"){
       console.log("player o wins")
       // reset function
+    }else if(true){
+      console.log("draw")
     }
   }
