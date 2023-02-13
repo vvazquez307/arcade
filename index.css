@@ -43,7 +43,13 @@ input{
     width: 100px;
 }
 
-/* .square:nth-child(1){
-    border: 1px solid red;
+#CPUButton{
+    font-weight: 700;
+    height: 25px;
+    width: 100px;
+    margin-top: 2.5%;
     background-color: red;
-} */
+}
+#content_container > form:nth-child(3){
+    padding-top: 5px;
+}
